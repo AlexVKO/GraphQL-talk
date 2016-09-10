@@ -3,15 +3,21 @@ Rails.application.routes.draw do
 
   constraints default: { format: :json } do
     namespace :web, path: '/', constraints: { subdomain: 'web' } do
-      # our web end points here :)
+      scope module: :v1, constraints: ApiConstraints.new(version:1, default: true) do
+        # our web end points here :)
+      end
     end
 
     namespace :mobile, path: '/', constraints: { subdomain: 'mobile' } do
-      # our mobile end points here :)
+      scope module: :v1, constraints: ApiConstraints.new(version:1, default: true) do
+        # our mobile end points here :)
+      end
     end
 
     namespace :admin, path: '/', constraints: { subdomain: 'admin' } do
-      # our admin end points here :)
+      scope module: :v1, constraints: ApiConstraints.new(version:1, default: true) do
+        # our admin end points here :)
+      end
     end
   end
 
