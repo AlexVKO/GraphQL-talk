@@ -1,2 +1,3 @@
-class Web::V1::UsersController < ApplicationController
+class Web::V1::UsersController < WebController
+  include UsersConcerns
 end
