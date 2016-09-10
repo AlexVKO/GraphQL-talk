@@ -1,3 +1,6 @@
 class Mobile::V1::UsersController < MobileController
-  include UsersConcerns
+
+  def index
+    render json: User.all, each_serializer: Mobile::UserSerializer
+  end
 end
