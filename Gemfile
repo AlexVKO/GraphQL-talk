@@ -7,6 +7,7 @@ gem 'puma', '~> 3.0'
 
 # CORS
 gem 'rack-cors'
+gem 'rack-attack'
 
 # Auth
 gem 'omniauth', '>= 1.0.0'
